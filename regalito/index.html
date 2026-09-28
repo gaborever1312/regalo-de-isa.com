@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imagen</title>
+</head>
+<body>
+    
+    <img src="imgp.jpeg" width="350px" alt="">
+    <img src="texto_uno.jpeg" width="500px">
+    <img src="texto_dos.jpeg" width="500px">
+    <img src="texto_tres.jpeg" alt="">
+  <audio controls>
+
+    <source src="cancion.mp3" type="audio/mpeg">
+    
+  </audio>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ti 💖</title>
+  <style>
+    body {
+      background-color: #2d4848;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    img {
+      width: 250px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button {
+      background-color: #516aba;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .seccion {
+      display: none; /* Oculta al inicio */
+      margin-top: 30px;
+    }
+    .mensaje {
+      display: none; /* Cada mensaje oculto */
+      margin-top: 20px;
+    }
+    .foto {
+      width: 200px;
+      border-radius: 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Imagen principal -->
+  <img src="imgp.jpeg" height="250px" alt="Imagen romántica">
+
+  <!-- Campo para contraseña -->
+  <div>
+    <input type="password" id="clave" placeholder="Escribe la contraseña">
+    <button onclick="verificar()">Entrar</button>
+  </div>
+
+  <!-- Texto debajo -->
+  <p>Tu ya sabes la contraseña</p>
+
+  <!-- Sección desbloqueada -->
+  <div id="sorpresa" class="seccion">
+        <!-- Botón para reproducir música -->
+
+        <!-- Enlace a la canción -->
+    <p>🎶 Haz clic aquí para escuchar nuestra canción:</p>
+    <a href="https://music.apple.com/mx/album/gaviotas-de-cristal/6807859339?i=6807859354" target="_blank" style="color:#e60073; font-size:18px; text-decoration:none;">
+      Escuchar canción 💕
+    </a>
+
+
+    <h2>💖 ¡Feliz 9 meses, amor! 💖</h2>
+    <p>Elige una imagen a la vez pq se me traba :(</p>
+    <button onclick="mostrar('mensaje1')">Parte 1</button>
+    <button onclick="mostrar('mensaje2')">Parte 2</button>
+    <button onclick="mostrar('mensaje3')">Parte 3</button>
+
+    <!-- Mensajes ocultos -->
+    <div id="mensaje1" class="mensaje">
+      <h3>🌹 Mensaje 1</h3>
+      <p>No solo eres mi mejor amiga, eres mi compañera 
+        para descubrir lugares 💕</p>
+      <img src="texto_uno.jpeg" alt="Foto juntos" class="foto">
+    </div>
+
+    <div id="mensaje2" class="mensaje">
+      <h3>✨ Mensaje 2</h3>
+      <p>Gracias por todo lo que me has enseñado y lo que
+        probablemente me vas a enseñar JAJAJA  😍</p>
+      <img src="texto_dos.jpeg" alt="Otra foto" class="foto">
+    </div>
+
+    <div id="mensaje3" class="mensaje">
+      <h3>💫 Mensaje 3</h3>
+      <p>Este mes contigo ha sido increíble(y los que faltan) 💖</p>
+      <img src="texto_tres.jpeg" alt="Otra foto" class="foto">
+    </div>
+        <div id="mensaje3" class="mensaje">
+      <h3>💫 Mensaje 3</h3>
+      <p>Este mes contigo ha sido increíble(y los que faltan) 💖</p>
+      <img src="texto_tres.jpeg" alt="Otra foto" class="foto">
+    </div>
+
+    <!-- Texto final oculto -->
+    <div id="final" style="display:none; margin-top:40px;">
+      <h2>💝 Te amo siempre, guapa 💝</h2>
+      <p>Gracias por compartir este mes conmigo, eres lo mejor que me ha pasado, chula(intentare mejorar en esto jeje) ✨</p>
+      <p>Quiero que sepas que cada día contigo me hace más feliz, y que todo esto lo hice solo para recordarte cuánto te amo 💕</p>
+    </div>
+  </div> <!-- aquí cierra el div sorpresa -->
+
+  </div>
+
+  <script>
+    function verificar() {
+      const clave = document.getElementById("clave").value;
+      if (clave === "1312") {
+        document.getElementById("sorpresa").style.display = "block";
+      } else {
+        alert("Contraseña incorrecta 😅");
+      }
+    }
+
+    function mostrar(id) {
+      // Oculta todos los mensajes primero
+      document.querySelectorAll('.mensaje').forEach(m => m.style.display = 'none');
+      // Muestra solo el que corresponde
+      document.getElementById(id).style.display = "block";
+    }
+  </script>
+    <script>
+    let abiertas = 0; // contador de opciones abiertas
+
+    function verificar() {
+      const clave = document.getElementById("clave").value;
+      if (clave === "1312") {
+        document.getElementById("sorpresa").style.display = "block";
+      } else {
+        alert("Contraseña incorrecta 😅");
+      }
+    }
+
+    function mostrar(id) {
+      // Oculta todos los mensajes primero
+      document.querySelectorAll('.mensaje').forEach(m => m.style.display = 'none');
+      // Muestra solo el que corresponde
+      document.getElementById(id).style.display = "block";
+
+      // Suma al contador si esa opción no se había abierto antes
+      if (!document.getElementById(id).dataset.abierto) {
+        abiertas++;
+        document.getElementById(id).dataset.abierto = "true";
+      }
+
+      // Cuando ya abrió las 3, muestra el texto final
+      if (abiertas === 3) {
+        document.getElementById("final").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
+
+</body>
+</html>
+
+</body>
+</html>
